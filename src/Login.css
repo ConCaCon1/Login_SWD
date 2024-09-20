@@ -18,7 +18,9 @@
     color:#f20c0c;
 }  
 
-
+.login {
+    height: 50vh;
+}
 .fa-fw {
     width: 1.28571429em;
     text-align: center;
@@ -30,6 +32,7 @@
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  background-image: url("https://images3.alphacoders.com/132/1323579.png");
 }
 .heading-section {
   font-size: 28px;
