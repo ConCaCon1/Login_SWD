@@ -1,23 +1,15 @@
 import "./Login.css";
 import React, { useState } from "react";
+
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
   return (
-    <div
-      className="img_wallpaper"
-      style={{
-        backgroundImage:
-          "url('https://images3.alphacoders.com/132/1323579.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        height: "100vh",
-        width: "100%",
-      }}
-    >
+    <div className="login">
       <div className="login_container">
         <div className="row justify-content-center">
           <div className="col-md-6 text-center mb-5">
@@ -25,22 +17,15 @@ export default function Login() {
           </div>
         </div>
         <div className="row justify-content-center">
-          <div className="col-md-6 col-lg-4">
+          <div className="col-lg-6 text-center">
             <div className="login-wrap p-0">
               <h3 className="mb-4 text-center">
                 Bạn mới biết đến Green Leaf?
-                <a className="sign_up" href="/">
-                  Đăng Ký
-                </a>
+                <a className="sign_up" href="/signup"> Đăng Ký </a>
               </h3>
               <form action="#" className="signin-form">
                 <div className="form-group">
-                  <input
-                    type="text"
-                    className="form-control1"
-                    placeholder="Tên đăng nhập"
-                    required
-                  />
+                  <input type="text" className="form-control1" placeholder="Tên đăng nhập" required />
                 </div>
                 <div className="form-group">
                   <input
@@ -51,20 +36,13 @@ export default function Login() {
                     required
                   />
                   <span
-                    className={`fa fa-fw field-icon toggle-password ${
-                      showPassword ? "fa-eye" : "fa-eye-slash"
-                    }`}
+                    className={`fa fa-fw field-icon toggle-password ${showPassword ? "fa-eye" : "fa-eye-slash"}`}
                     onClick={togglePasswordVisibility}
                     style={{ cursor: "pointer" }}
                   ></span>
                 </div>
                 <div className="form-group">
-                  <button
-                    type="submit"
-                    className="form-control btn btn-primary submit px-3"
-                  >
-                    Đăng nhập
-                  </button>
+                  <button type="submit" className="form-control btn btn-primary submit px-3">Đăng nhập</button>
                 </div>
                 <div className="form-group d-md-flex">
                   <div className="w-50">
@@ -75,18 +53,16 @@ export default function Login() {
                     </label>
                   </div>
                   <div className="w-50 text-md-right">
-                    <a href="/" style={{ color: "#fff" }}>
-                      Quên mật khẩu
-                    </a>
+                    <a href="/forgot-password" style={{ color: "#fff" }}> Quên mật khẩu </a>
                   </div>
                 </div>
               </form>
               <p className="w-100 text-center Or">— Hoặc —</p>
               <div className="social text-center">
                 <a href="#" className="text-center">
-                  <span className="">
-                    <i className="fa-brands fa-google rainbow-icon"></i>
-                  </span>{" "}
+                  <span className="gg_icon">
+                    <img src="https://cdn-icons-png.flaticon.com/256/300/300221.png" className="ggle text-center"alt=""></img>
+                  </span>
                   Google
                 </a>
               </div>
@@ -97,3 +73,4 @@ export default function Login() {
     </div>
   );
 }
+
