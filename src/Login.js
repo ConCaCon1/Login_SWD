@@ -33,6 +33,7 @@ export default function Login() {
                     type={showPassword ? "text" : "password"}
                     className="form-control1"
                     placeholder="Mật khẩu"
+                    autoComplete="on"
                     required
                   />
                   <span
@@ -47,13 +48,14 @@ export default function Login() {
                 <div className="form-group d-md-flex">
                   <div className="w-50">
                     <label className="checkbox-wrap checkbox-primary">
-                      Ghi nhớ đăng nhập
+                      
                       <input type="checkbox" defaultChecked />
                       <span className="checkmark"></span>
+                      Ghi nhớ đăng nhập
                     </label>
                   </div>
                   <div className="w-50 text-md-right">
-                    <a href="/forgot-password" style={{ color: "#fff" }}> Quên mật khẩu </a>
+                    <a href="/forgotpassword" style={{ color: "#fff" }}> Quên mật khẩu </a>
                   </div>
                 </div>
               </form>

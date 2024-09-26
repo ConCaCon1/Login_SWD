@@ -5,7 +5,6 @@ import "./SignUp.css";
 export default function SignUp() {
   const navigate = useNavigate();
 
-  // States for form fields and error messages
   const [formValues, setFormValues] = useState({
     firstName: "",
     lastName: "",
@@ -16,14 +15,12 @@ export default function SignUp() {
 
   const [showPassword, setShowPassword] = useState(false);
   
-  // States for individual error messages
   const [errors, setErrors] = useState({});
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
 
-    // Clear the error for the current field when the user starts typing
     setErrors({ ...errors, [name]: "" });
   };
 
@@ -54,16 +51,13 @@ export default function SignUp() {
 
     setErrors(newErrors);
 
-    // Return true if there are no errors
     return Object.keys(newErrors).length === 0;
   };
 
   const handleSignUp = (e) => {
     e.preventDefault();
-
-    // Validate the form
+   
     if (validateForm()) {
-      // If valid, navigate to the next step
       navigate("/signupstep");
     }
   };
@@ -78,7 +72,6 @@ export default function SignUp() {
               <p className="text-white">Đăng ký và bắt đầu mua sắm!</p>
 
               <form className="input_box mt-3" onSubmit={handleSignUp}>
-                {/* First and Last Name */}
                 <div className="infor_sigup row">
                   <div className="col-md-6 mb-3">
                     <input
@@ -104,28 +97,29 @@ export default function SignUp() {
                   </div>
                 </div>
 
-                {/* Email */}
                 <div className="input_email mb-3">
                   <input
                     type="email"
                     name="email"
                     className="form-control1"
                     placeholder="Địa chỉ Email"
+                    
                     value={formValues.email}
                     onChange={handleInputChange}
                   />
                   {errors.email && <div className="text-danger1">{errors.email}</div>}
                 </div>
 
-                {/* Password and Confirm Password */}
                 <div className="input_password mb-3">
                   <input
                     type={showPassword ? "text" : "password"}
                     name="password"
                     className="form-control1"
                     placeholder="Mật khẩu"
+                    autoComplete="on"
                     value={formValues.password}
                     onChange={handleInputChange}
+                    
                   />
                   {errors.password && <div className="text-danger1">{errors.password}</div>}
                 </div>
@@ -135,6 +129,7 @@ export default function SignUp() {
                     name="confirmPassword"
                     className="form-control1"
                     placeholder="Điền lại mật khẩu"
+                    autoComplete="on"
                     value={formValues.confirmPassword}
                     onChange={handleInputChange}
                   />
@@ -146,7 +141,6 @@ export default function SignUp() {
                   {errors.confirmPassword && <div className="text-danger1">{errors.confirmPassword}</div>}
                 </div>
 
-                {/* Checkbox */}
                 <div className="form-check checkbox_input mt-4 text-start">
                   <input
                     className="form-check-input"
@@ -158,12 +152,10 @@ export default function SignUp() {
                   </label>
                 </div>
 
-                {/* Submit button */}
                 <button className="btn_next w-100 mt-4" type="submit">
                   Tiếp tục
                 </button>
 
-                {/* Terms and login links */}
                 <div className="term_policy mt-3 text-white">
                   <span>Bằng việc đăng kí, bạn đã đồng ý với Green Leaf về </span>
                   <Link to="/terms_of_use" className="text-danger1">Điều khoản</Link>
@@ -173,7 +165,7 @@ export default function SignUp() {
 
                 <div className="sign_in mt-4">
                   <span className="text-white">Bạn đã có tài khoản? </span>
-                  <Link to="/login" className="text-danger1">Đăng nhập</Link>
+                  <Link to="/" className="text-danger1">Đăng nhập</Link>
                 </div>
               </form>
             </div>
